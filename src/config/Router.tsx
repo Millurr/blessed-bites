@@ -6,7 +6,7 @@ import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Navbar />,
       errorElement: <ErrorPage />,
       children: [
