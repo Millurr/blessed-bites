@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
+import App from "../components/App";
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Navbar />,
+      element: <App />,
       errorElement: <ErrorPage />,
       children: [
         {

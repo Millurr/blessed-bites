@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link, Outlet } from 'react-router-dom';
+import { routes } from "../config/routes.json";
 
 interface Props {
   /**
@@ -24,20 +25,6 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = [
-  {
-    name: 'Home',
-    path: '/'
-  },
-  {
-    name: 'About',
-    path: '/about'
-  },
-  {
-    name: 'Contact',
-    path: '/contact'
-  }
-]
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -54,7 +41,7 @@ export default function DrawerAppBar(props: Props) {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {routes.map((item) => (
           <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }} href={`${item.path.toLowerCase()}`}>
               <ListItemText primary={item.name}/>
@@ -89,7 +76,7 @@ export default function DrawerAppBar(props: Props) {
             Blessed Bites
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
+            {routes.map((item) => (
               <Button key={item.name} sx={{ color: '#fff' }}>
                 <Link to={`${item.path.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }} >
                   {item.name}
